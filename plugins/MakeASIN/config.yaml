@@ -1,0 +1,27 @@
+name: MakeASIN
+id: MakeASIN
+author_name: naoaki.onozaki
+author_link: http://www.zelazny.mydns.jp/
+version: 1.0
+#l10n_class: MakeASIN::L10N
+
+blog_config_template: blog_config_template.tmpl
+settings:
+    aws_accesskey:
+        Default: ''
+        Scope: blog
+    aws_secretkey:
+        Default: ''
+        Scope: blog
+tags:
+    modifier:
+        isbn2asin:   $MakeASIN::MakeASIN::Tags::isbn_to_asin
+        # ISBN13 to ISBN10(equal to ASIN)
+        zassi2jan:   $MakeASIN::MakeASIN::Tags::zassi_to_jan
+        # Zassi Code to JAN Code
+        jan2asin:    $MakeASIN::MakeASIN::Tags::jan_to_asin
+        # JAN/EAN Code to ASIN(Amazon Lookup)
+        zassi2asin:  $MakeASIN::MakeASIN::Tags::zassi_to_asin
+        # Zassi Code to ASIN
+        format_isbn13: $MakeASIN::MakeASIN::Tags::format_isbn13
+        format_isbn10: $MakeASIN::MakeASIN::Tags::format_isbn10
